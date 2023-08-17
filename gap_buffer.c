@@ -46,7 +46,7 @@ char* extract_text(gap_buf* buf)
   char* text = malloc(gb_used(buf) + 1);
   if (!text) return NULL;
 
-  strncpy(text              , buf->buffer               , buf->cursor);
+  strncpy(text, buf->buffer, buf->cursor);
   strncpy(text + buf->cursor, buf->buffer + buf->gap_end, gb_back(buf));
   text[gb_used(buf)] = '\0';
   return text;
